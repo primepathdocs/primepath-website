@@ -2,991 +2,1230 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="PrimePath Documentation Services provides professional documentation assistance and administrative support to individuals and businesses in Nigeria and internationally.">
-<title>PrimePath Documentation Services | Clarity. Convenience. Confidence.</title>
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
-
-<style>
-:root {
-  --dark: #172923;
-  --green: #315b49;
-  --cream: #f7f6f0;
-  --white: #ffffff;
-  --gold: #b69a64;
-  --muted: #69736d;
-  --light: #e9eee9;
-}
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-html { scroll-behavior: smooth; }
-
-body {
-  font-family: 'DM Sans', sans-serif;
-  color: var(--dark);
-  background: var(--white);
-  line-height: 1.7;
-}
-
-a { text-decoration: none; color: inherit; }
-
-button { font-family: inherit; }
-
-.container {
-  width: min(1120px, 90%);
-  margin: auto;
-}
-
-header {
-  background: var(--white);
-  position: sticky;
-  top: 0;
-  z-index: 100;
-  box-shadow: 0 2px 18px rgba(0,0,0,.045);
-}
-
-.nav {
-  min-height: 82px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.logo {
-  font-family: 'Playfair Display', serif;
-  font-size: 25px;
-  font-weight: 700;
-  letter-spacing: 1px;
-  color: var(--dark);
-}
-
-.logo span { color: var(--gold); }
-
-.logo small {
-  display: block;
-  font-family: 'DM Sans', sans-serif;
-  font-size: 9px;
-  letter-spacing: 2px;
-  font-weight: 600;
-  color: var(--muted);
-}
-
-.nav-links {
-  display: flex;
-  align-items: center;
-  gap: 27px;
-  font-size: 13px;
-  font-weight: 600;
-}
-
-.nav-links a:hover { color: var(--green); }
-
-.nav-cta, .btn-primary {
-  background: var(--green);
-  color: white;
-  padding: 13px 22px;
-  border-radius: 5px;
-}
-
-.menu-btn {
-  display: none;
-  background: none;
-  border: none;
-  font-size: 27px;
-  color: var(--dark);
-  cursor: pointer;
-}
-
-.hero {
-  background: var(--cream);
-  padding: 105px 0 100px;
-  overflow: hidden;
-}
-
-.hero-content { max-width: 760px; }
-
-.eyebrow {
-  color: var(--green);
-  font-size: 12px;
-  font-weight: 700;
-  letter-spacing: 2.5px;
-  text-transform: uppercase;
-  margin-bottom: 20px;
-}
-
-h1, h2, h3 {
-  font-family: 'Playfair Display', serif;
-  line-height: 1.2;
-}
-
-h1 {
-  font-size: clamp(40px, 6vw, 68px);
-  margin-bottom: 24px;
-}
-
-h1 span { color: var(--green); }
-
-.hero p {
-  max-width: 620px;
-  color: var(--muted);
-  font-size: 17px;
-  margin-bottom: 32px;
-}
-
-.btn {
-  display: inline-block;
-  padding: 14px 25px;
-  border-radius: 5px;
-  font-weight: 600;
-  font-size: 14px;
-  transition: .2s;
-}
-
-.btn-primary:hover {
-  background: var(--dark);
-  transform: translateY(-2px);
-}
-
-.btn-outline {
-  border: 1px solid var(--green);
-  color: var(--green);
-  margin-left: 10px;
-}
-
-.btn-outline:hover { background: var(--light); }
-
-.trust-strip {
-  background: var(--dark);
-  color: white;
-  padding: 24px 0;
-}
-
-.trust-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  text-align: center;
-  gap: 20px;
-}
-
-.trust-grid p {
-  font-size: 13px;
-  font-weight: 600;
-}
-
-.trust-grid span {
-  color: #d4c49f;
-  display: block;
-  font-size: 11px;
-  margin-top: 3px;
-}
-
-section { padding: 85px 0; }
-
-.section-heading {
-  max-width: 650px;
-  margin-bottom: 42px;
-}
-
-.section-heading h2 {
-  font-size: clamp(30px, 4vw, 43px);
-  margin-bottom: 15px;
-}
-
-.section-heading p { color: var(--muted); }
-
-.about-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 65px;
-  align-items: center;
-}
-
-.about-panel {
-  background: var(--cream);
-  padding: 40px;
-  border-radius: 8px;
-}
-
-.about-panel h3 {
-  font-size: 28px;
-  margin-bottom: 18px;
-}
-
-.about-panel p {
-  color: var(--muted);
-  margin-bottom: 15px;
-}
-
-.check-list {
-  list-style: none;
-  margin-top: 20px;
-}
-
-.check-list li {
-  margin: 12px 0;
-  font-size: 14px;
-}
-
-.check-list li::before {
-  content: "✓";
-  color: var(--green);
-  font-weight: 700;
-  margin-right: 12px;
-}
-
-.services { background: var(--cream); }
-
-.service-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
-}
-
-.service-card {
-  background: white;
-  padding: 29px;
-  border-radius: 7px;
-  border: 1px solid #eceee9;
-  transition: .2s;
-}
-
-.service-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 12px 30px rgba(0,0,0,.06);
-}
-
-.service-number {
-  color: var(--gold);
-  font-size: 13px;
-  font-weight: 700;
-  letter-spacing: 2px;
-}
-
-.service-card h3 {
-  font-size: 21px;
-  margin: 15px 0 12px;
-}
-
-.service-card p {
-  color: var(--muted);
-  font-size: 13px;
-}
-
-.service-note {
-  margin-top: 30px;
-  background: var(--light);
-  padding: 20px 24px;
-  border-radius: 6px;
-  font-size: 13px;
-  color: var(--dark);
-}
-
-.process-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 25px;
-}
-
-.process-card { padding: 10px 5px; }
-
-.process-card .number {
-  width: 43px;
-  height: 43px;
-  background: var(--light);
-  color: var(--green);
-  border-radius: 50%;
-  display: grid;
-  place-items: center;
-  font-weight: 700;
-  margin-bottom: 20px;
-}
-
-.process-card h3 {
-  font-size: 19px;
-  margin-bottom: 10px;
-}
-
-.process-card p {
-  font-size: 13px;
-  color: var(--muted);
-}
-
-.values {
-  background: var(--dark);
-  color: white;
-}
-
-.values .section-heading p { color: #c1cbc4; }
-.values .eyebrow { color: #d4c49f; }
-
-.value-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 30px;
-}
-
-.value-card {
-  border: 1px solid #52635a;
-  padding: 28px;
-  border-radius: 6px;
-}
-
-.value-card h3 {
-  color: #d4c49f;
-  margin-bottom: 12px;
-  font-size: 21px;
-}
-
-.value-card p {
-  color: #d0d8d1;
-  font-size: 13px;
-}
-
-.faq-list {
-  max-width: 800px;
-}
-
-details {
-  border-bottom: 1px solid #e7e9e5;
-  padding: 20px 0;
-}
-
-summary {
-  cursor: pointer;
-  font-weight: 600;
-  font-size: 15px;
-}
-
-details p {
-  color: var(--muted);
-  font-size: 14px;
-  padding-top: 13px;
-}
-
-.contact {
-  background: var(--cream);
-}
-
-.contact-box {
-  background: var(--dark);
-  color: white;
-  border-radius: 9px;
-  padding: 55px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 30px;
-}
-
-.contact-box h2 {
-  font-size: 36px;
-  margin-bottom: 15px;
-}
-
-.contact-box p {
-  color: #d0d8d1;
-  max-width: 550px;
-}
-
-.contact-box .btn {
-  background: var(--gold);
-  color: var(--dark);
-  white-space: nowrap;
-}
-
-.disclaimer {
-  background: #f2f3ef;
-  padding: 24px 0;
-}
-
-.disclaimer p {
-  font-size: 12px;
-  color: var(--muted);
-}
-
-footer {
-  background: #101c17;
-  color: white;
-  padding: 45px 0 25px;
-}
-
-.footer-grid {
-  display: grid;
-  grid-template-columns: 2fr 1fr 1fr;
-  gap: 40px;
-  margin-bottom: 35px;
-}
-
-footer h3 {
-  color: white;
-  font-size: 22px;
-  margin-bottom: 15px;
-}
-
-footer p, footer a {
-  color: #bdc7c0;
-  font-size: 13px;
-}
-
-footer a { display: block; margin: 9px 0; }
-
-footer a:hover { color: white; }
-
-.footer-bottom {
-  border-top: 1px solid #34443a;
-  padding-top: 20px;
-  font-size: 12px;
-  color: #aebbb2;
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 10px;
-}
-
-@media(max-width: 850px) {
-  .nav-links {
-    display: none;
-    position: absolute;
-    top: 82px;
-    left: 0;
-    width: 100%;
-    background: white;
-    padding: 25px 5%;
-    flex-direction: column;
-    align-items: flex-start;
-    box-shadow: 0 10px 15px rgba(0,0,0,.06);
-  }
-
-  .nav-links.active { display: flex; }
-  .menu-btn { display: block; }
-  .about-grid { grid-template-columns: 1fr; gap: 30px; }
-  .service-grid { grid-template-columns: repeat(2, 1fr); }
-  .process-grid { grid-template-columns: repeat(2, 1fr); }
-  .contact-box { flex-direction: column; align-items: flex-start; }
-}
-
-@media(max-width: 550px) {
-  .hero { padding: 75px 0; }
-  section { padding: 65px 0; }
-  .service-grid, .process-grid, .value-grid {
-    grid-template-columns: 1fr;
-  }
-  .trust-grid { grid-template-columns: 1fr; gap: 17px; }
-  .about-panel { padding: 27px; }
-  .contact-box { padding: 32px 25px; }
-  .contact-box h2 { font-size: 29px; }
-  .btn-outline { margin: 12px 0 0; }
-  .footer-grid { grid-template-columns: 1fr; gap: 25px; }
-}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#172923">
+  <meta name="description" content="PrimePath Documentation Services provides independent online documentation guidance, administrative assistance and application support for individuals and businesses.">
+  <title>PrimePath Documentation Services | Clarity. Support. Progress.</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --green: #172923;
+      --green-light: #315b49;
+      --green-soft: #e9eee9;
+      --cream: #f7f6f0;
+      --gold: #b69a64;
+      --dark: #202722;
+      --muted: #737b75;
+      --white: #ffffff;
+      --border: #e5e7e1;
+      --serif: "Playfair Display", Georgia, serif;
+      --sans: "DM Sans", Arial, sans-serif;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: var(--sans);
+      color: var(--dark);
+      background: var(--white);
+      line-height: 1.7;
+    }
+    a { color: inherit; text-decoration: none; }
+    button, input, select, textarea { font: inherit; }
+    img { display: block; max-width: 100%; }
+    .container { width: min(1160px, 90%); margin: auto; }
+    .eyebrow {
+      color: var(--gold);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+    }
+    h1, h2, h3 { line-height: 1.2; }
+    h1, h2 { font-family: var(--serif); font-weight: 600; }
+    h2 { font-size: clamp(30px, 4vw, 44px); color: var(--green); }
+    .section-intro { max-width: 650px; color: var(--muted); margin-top: 15px; }
+    .section-heading { margin-bottom: 42px; }
+    .btn {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      gap: 9px;
+      padding: 14px 23px;
+      border: 1px solid transparent;
+      border-radius: 3px;
+      font-size: 13px;
+      font-weight: 700;
+      transition: .25s ease;
+      cursor: pointer;
+    }
+    .btn-primary { background: var(--gold); color: var(--green); }
+    .btn-primary:hover { background: #c9ae79; transform: translateY(-2px); }
+    .btn-outline { border-color: rgba(255,255,255,.65); color: white; }
+    .btn-outline:hover { background: white; color: var(--green); }
+    .btn-dark { background: var(--green); color: white; }
+    .btn-dark:hover { background: var(--green-light); }
+
+    /* HEADER */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(255,255,255,.97);
+      border-bottom: 1px solid var(--border);
+      backdrop-filter: blur(12px);
+    }
+    .nav {
+      min-height: 82px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 25px;
+    }
+    .brand { display: flex; align-items: center; gap: 12px; }
+    .brand-mark { width: 48px; height: 48px; flex-shrink: 0; }
+    .brand-name {
+      color: var(--green);
+      font-family: var(--serif);
+      font-size: 22px;
+      font-weight: 700;
+      line-height: 1.1;
+    }
+    .brand-sub {
+      display: block;
+      color: var(--muted);
+      font-family: var(--sans);
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      margin-top: 5px;
+    }
+    .nav-links { display: flex; align-items: center; gap: 27px; }
+    .nav-links a {
+      font-size: 12px;
+      font-weight: 600;
+      color: #414a44;
+      transition: color .2s;
+    }
+    .nav-links a:hover { color: var(--gold); }
+    .nav-links .nav-cta {
+      padding: 11px 17px;
+      color: white;
+      background: var(--green);
+      border-radius: 3px;
+    }
+    .menu-toggle {
+      display: none;
+      background: none;
+      border: 0;
+      color: var(--green);
+      font-size: 27px;
+      cursor: pointer;
+    }
+
+    /* HERO */
+    .hero {
+      min-height: 610px;
+      display: flex;
+      align-items: center;
+      position: relative;
+      color: white;
+      background:
+        linear-gradient(90deg, rgba(16,35,27,.94) 0%, rgba(16,35,27,.78) 48%, rgba(16,35,27,.24) 100%),
+        url("https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=2000&q=85") center/cover no-repeat;
+    }
+    .hero-content { max-width: 720px; padding: 95px 0; }
+    .hero .eyebrow { color: #d8bd87; }
+    .hero h1 {
+      font-size: clamp(43px, 6.5vw, 72px);
+      margin: 20px 0;
+      letter-spacing: -.8px;
+    }
+    .hero h1 span { color: #d5ba83; }
+    .hero p {
+      max-width: 570px;
+      color: rgba(255,255,255,.84);
+      font-size: 16px;
+      margin-bottom: 30px;
+    }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 13px; }
+    .hero-note {
+      margin-top: 45px;
+      padding-left: 15px;
+      border-left: 2px solid var(--gold);
+      color: rgba(255,255,255,.75);
+      font-size: 12px;
+    }
+
+    /* TRUST STRIP */
+    .trust-strip { background: var(--cream); padding: 28px 0; }
+    .trust-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 25px;
+    }
+    .trust-item { display: flex; align-items: center; gap: 14px; }
+    .trust-icon {
+      width: 43px;
+      height: 43px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      background: var(--green-soft);
+      color: var(--green);
+      font-size: 19px;
+    }
+    .trust-item strong { display: block; color: var(--green); font-size: 13px; }
+    .trust-item span { color: var(--muted); font-size: 11px; }
+
+    /* ABOUT */
+    section { padding: 92px 0; }
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      gap: 65px;
+    }
+    .about-image-wrap { position: relative; }
+    .about-image {
+      width: 100%;
+      height: 450px;
+      object-fit: cover;
+      border-radius: 4px;
+    }
+    .image-caption {
+      position: absolute;
+      right: -18px;
+      bottom: 25px;
+      max-width: 220px;
+      padding: 22px;
+      background: var(--green);
+      color: white;
+      box-shadow: 0 12px 35px rgba(0,0,0,.13);
+    }
+    .image-caption strong {
+      display: block;
+      color: #d5ba83;
+      font-family: var(--serif);
+      font-size: 25px;
+    }
+    .image-caption span { font-size: 11px; color: rgba(255,255,255,.8); }
+    .about-copy h2 { margin: 13px 0 20px; }
+    .about-copy p { color: var(--muted); margin-bottom: 15px; font-size: 14px; }
+    .about-points { list-style: none; margin: 25px 0 30px; }
+    .about-points li {
+      display: flex;
+      gap: 12px;
+      margin: 12px 0;
+      color: var(--green);
+      font-size: 13px;
+      font-weight: 600;
+    }
+    .about-points li span { color: var(--gold); font-weight: 700; }
+
+    /* SERVICES */
+    .services-section { background: var(--cream); }
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+    .service-card {
+      padding: 29px 25px;
+      min-height: 245px;
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      transition: .25s ease;
+    }
+    .service-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 35px rgba(23,41,35,.08);
+      border-color: #c9b78e;
+    }
+    .service-icon {
+      width: 48px;
+      height: 48px;
+      display: grid;
+      place-items: center;
+      background: var(--green-soft);
+      color: var(--green);
+      border-radius: 4px;
+      font-size: 22px;
+      margin-bottom: 22px;
+    }
+    .service-card h3 { color: var(--green); font-size: 17px; margin-bottom: 11px; }
+    .service-card p { color: var(--muted); font-size: 12px; }
+    .service-card a {
+      display: inline-block;
+      margin-top: 17px;
+      color: #8c7447;
+      font-size: 11px;
+      font-weight: 700;
+    }
+    .service-disclaimer {
+      margin-top: 28px;
+      padding: 18px 20px;
+      background: #fff;
+      border-left: 3px solid var(--gold);
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    /* APPROACH */
+    .approach-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+    .approach-copy h2 { margin: 13px 0 18px; }
+    .approach-copy p { color: var(--muted); font-size: 14px; }
+    .steps { display: grid; gap: 23px; }
+    .step { display: flex; gap: 17px; align-items: flex-start; }
+    .step-number {
+      width: 42px;
+      height: 42px;
+      flex-shrink: 0;
+      display: grid;
+      place-items: center;
+      background: var(--green);
+      color: #e4cc9b;
+      font-family: var(--serif);
+      font-size: 18px;
+      border-radius: 50%;
+    }
+    .step h3 { color: var(--green); font-size: 15px; margin-bottom: 5px; }
+    .step p { color: var(--muted); font-size: 12px; }
+
+    /* FOUNDERS */
+    .founders-section { background: var(--green); color: white; }
+    .founders-section h2 { color: white; }
+    .founders-section .section-intro { color: rgba(255,255,255,.7); }
+    .founders-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 22px;
+      margin-top: 40px;
+    }
+    .founder-card {
+      padding: 32px;
+      display: flex;
+      gap: 23px;
+      align-items: center;
+      background: rgba(255,255,255,.07);
+      border: 1px solid rgba(255,255,255,.13);
+      border-radius: 4px;
+    }
+    .founder-initial {
+      width: 78px;
+      height: 78px;
+      flex-shrink: 0;
+      display: grid;
+      place-items: center;
+      border: 1px solid var(--gold);
+      color: #d5ba83;
+      font-family: var(--serif);
+      font-size: 34px;
+    }
+    .founder-card h3 { font-family: var(--serif); font-size: 23px; }
+    .founder-role {
+      display: block;
+      margin: 7px 0 10px;
+      color: #d5ba83;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+    .founder-card p { color: rgba(255,255,255,.7); font-size: 12px; }
+
+    /* STANDARDS */
+    .standards-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 17px;
+    }
+    .standard {
+      padding: 24px 18px;
+      background: var(--cream);
+      border-radius: 4px;
+    }
+    .standard strong { display: block; color: var(--green); margin-bottom: 8px; font-size: 13px; }
+    .standard p { color: var(--muted); font-size: 11px; }
+
+    /* FAQ */
+    .faq-section { background: var(--cream); }
+    .faq-list { max-width: 850px; }
+    .faq-item { background: white; margin-bottom: 10px; border: 1px solid var(--border); }
+    .faq-question {
+      width: 100%;
+      padding: 20px 22px;
+      background: transparent;
+      border: 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 15px;
+      text-align: left;
+      color: var(--green);
+      font-weight: 700;
+      font-size: 13px;
+      cursor: pointer;
+    }
+    .faq-question span:last-child { color: var(--gold); font-size: 20px; }
+    .faq-answer { display: none; padding: 0 22px 20px; color: var(--muted); font-size: 12px; }
+    .faq-item.active .faq-answer { display: block; }
+    .faq-item.active .faq-question span:last-child { transform: rotate(45deg); }
+
+    /* CONTACT */
+    .contact-section { background: white; }
+    .contact-grid {
+      display: grid;
+      grid-template-columns: .85fr 1.15fr;
+      gap: 55px;
+      align-items: start;
+    }
+    .contact-copy h2 { margin: 13px 0 18px; }
+    .contact-copy p { color: var(--muted); font-size: 13px; margin-bottom: 18px; }
+    .contact-note {
+      margin-top: 27px;
+      padding: 19px;
+      background: var(--cream);
+      border-left: 3px solid var(--gold);
+      color: var(--muted);
+      font-size: 11px;
+    }
+    .contact-form {
+      padding: 32px;
+      background: var(--cream);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+    }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
+    .field { margin-bottom: 17px; }
+    .field label {
+      display: block;
+      margin-bottom: 7px;
+      color: var(--green);
+      font-size: 11px;
+      font-weight: 700;
+    }
+    .field input, .field select, .field textarea {
+      width: 100%;
+      padding: 13px 14px;
+      border: 1px solid #dfe2db;
+      border-radius: 3px;
+      background: white;
+      color: var(--dark);
+      outline: none;
+      font-size: 12px;
+    }
+    .field input:focus, .field select:focus, .field textarea:focus { border-color: var(--gold); }
+    .field textarea { min-height: 115px; resize: vertical; }
+    .form-small { color: var(--muted); font-size: 10px; margin: 12px 0 18px; }
+    .form-status { margin-top: 13px; color: var(--green); font-size: 12px; }
+
+    /* POLICIES */
+    .policy-section { background: var(--cream); padding: 65px 0; }
+    .policy-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 25px; }
+    .policy-card {
+      padding: 25px;
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      scroll-margin-top: 100px;
+    }
+    .policy-card h3 { color: var(--green); font-family: var(--serif); font-size: 21px; margin-bottom: 12px; }
+    .policy-card p, .policy-card li { color: var(--muted); font-size: 11px; margin-bottom: 9px; }
+    .policy-card ul { padding-left: 18px; }
+
+    /* FOOTER */
+    footer { background: #101d18; color: white; padding: 55px 0 22px; }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr 1fr;
+      gap: 45px;
+      padding-bottom: 35px;
+    }
+    .footer-brand .brand-name { color: white; }
+    .footer-brand .brand-sub { color: rgba(255,255,255,.55); }
+    .footer-brand p { max-width: 330px; margin-top: 18px; color: rgba(255,255,255,.6); font-size: 12px; }
+    .footer-column h4 {
+      margin-bottom: 17px;
+      color: #d5ba83;
+      font-size: 11px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+    .footer-column a { display: block; margin: 9px 0; color: rgba(255,255,255,.68); font-size: 11px; }
+    .footer-column a:hover { color: white; }
+    .footer-bottom {
+      padding-top: 20px;
+      border-top: 1px solid rgba(255,255,255,.12);
+      display: flex;
+      justify-content: space-between;
+      gap: 15px;
+      color: rgba(255,255,255,.48);
+      font-size: 10px;
+    }
+    .disclaimer { max-width: 720px; margin-top: 18px; color: rgba(255,255,255,.45); font-size: 10px; }
+
+    @media (max-width: 900px) {
+      .nav-links { gap: 15px; }
+      .nav-links a { font-size: 11px; }
+      .about-grid, .approach-grid { gap: 35px; }
+      .services-grid { grid-template-columns: repeat(2, 1fr); }
+      .standards-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 700px) {
+      .nav { min-height: 72px; }
+      .brand-name { font-size: 19px; }
+      .brand-mark { width: 42px; height: 42px; }
+      .menu-toggle { display: block; }
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 72px;
+        left: 0;
+        right: 0;
+        padding: 20px 5%;
+        background: white;
+        border-bottom: 1px solid var(--border);
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+      }
+      .nav-links.open { display: flex; }
+      .nav-links a { padding: 12px 0; font-size: 13px; }
+      .nav-links .nav-cta { padding: 12px 15px; text-align: center; margin-top: 8px; }
+      .hero { min-height: 590px; background-position: 58% center; }
+      .hero-content { padding: 75px 0; }
+      .hero h1 { font-size: 47px; }
+      .hero p { font-size: 14px; }
+      section { padding: 68px 0; }
+      .trust-grid { grid-template-columns: 1fr; gap: 17px; }
+      .about-grid, .approach-grid, .contact-grid { grid-template-columns: 1fr; gap: 35px; }
+      .about-image { height: 330px; }
+      .image-caption { right: -5px; }
+      .services-grid { grid-template-columns: 1fr; }
+      .service-card { min-height: auto; }
+      .founders-grid { grid-template-columns: 1fr; }
+      .founder-card { padding: 23px; }
+      .policy-grid { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr 1fr; gap: 30px; }
+      .footer-brand { grid-column: 1 / -1; }
+      .footer-bottom { flex-direction: column; }
+    }
+    @media (max-width: 420px) {
+      .hero h1 { font-size: 40px; }
+      .hero-actions .btn { width: 100%; }
+      .form-row { grid-template-columns: 1fr; gap: 0; }
+      .contact-form { padding: 22px 17px; }
+      .founder-card { align-items: flex-start; flex-direction: column; }
+      .standards-grid { grid-template-columns: 1fr 1fr; }
+      .footer-grid { grid-template-columns: 1fr; }
+      .footer-brand { grid-column: auto; }
+    }
+  </style>
 </head>
 
 <body>
 
 <header>
   <div class="container nav">
-    <a href="#home" class="logo">
-      PRIME<span>PATH</span>
-      <small>DOCUMENTATION SERVICES</small>
+    <a class="brand" href="#home" aria-label="PrimePath home">
+      <svg class="brand-mark" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-label="PrimePath logo">
+        <rect x="3" y="3" width="94" height="94" rx="8" fill="#172923"/>
+        <path d="M25 76V25H48C62 25 70 33 70 45C70 57 62 64 48 64H39" fill="none" stroke="#d0b47d" stroke-width="6" stroke-linecap="square"/>
+        <path d="M55 76L76 55" fill="none" stroke="#ffffff" stroke-width="5"/>
+        <path d="M62 76H76V62" fill="none" stroke="#ffffff" stroke-width="5"/>
+      </svg>
+      <span>
+        <span class="brand-name">PrimePath</span>
+        <span class="brand-sub">DOCUMENTATION SERVICES</span>
+      </span>
     </a>
 
-    <button class="menu-btn" onclick="toggleMenu()" aria-label="Toggle navigation">☰</button>
+    <button class="menu-toggle" id="menuToggle" aria-label="Open navigation" aria-expanded="false">☰</button>
 
     <nav class="nav-links" id="navLinks">
       <a href="#home">Home</a>
-      <a href="#about">About Us</a>
+      <a href="#about">About</a>
       <a href="#services">Services</a>
-      <a href="#process">How It Works</a>
+      <a href="#how-it-works">How It Works</a>
+      <a href="#founders">Founders</a>
       <a href="#faq">FAQs</a>
-      <a href="#contact" class="nav-cta">Make an Enquiry</a>
+      <a class="nav-cta" href="#contact">Make an Enquiry</a>
     </nav>
   </div>
 </header>
 
 <main>
-
-<section class="hero" id="home">
-  <div class="container hero-content">
-    <div class="eyebrow">Professional Documentation & Administrative Support</div>
-
-    <h1>Making Documentation <span>Simpler.</span></h1>
-
-    <p>
-      Navigating documentation processes doesn't have to be complicated.
-      PrimePath provides organised, reliable and customer-focused
-      documentation assistance to individuals and businesses in Nigeria
-      and internationally.
-    </p>
-
-    <a href="#services" class="btn btn-primary">Explore Our Services</a>
-    <a href="#contact" class="btn btn-outline">Contact PrimePath</a>
-  </div>
-</section>
-
-<div class="trust-strip">
-  <div class="container trust-grid">
-    <p>Professional Assistance<span>Organised service coordination</span></p>
-    <p>Clear Communication<span>Guidance at every stage</span></p>
-    <p>Customer Focus<span>Convenience and transparency</span></p>
-  </div>
-</div>
-
-<section id="about">
-  <div class="container about-grid">
-    <div>
-      <div class="eyebrow">Who We Are</div>
-      <h2 style="font-size:39px;margin-bottom:20px">
-        Your Partner in Navigating Documentation Processes
-      </h2>
-      <p style="color:var(--muted);margin-bottom:18px">
-        PrimePath Documentation Services is an independent,
-        online documentation and administrative support service.
-        We help individuals and businesses understand and navigate
-        various documentation processes through information,
-        coordination and administrative assistance.
-      </p>
-      <p style="color:var(--muted)">
-        Our approach is built around clarity, responsible service
-        coordination, transparency and effective communication.
-        We aim to make complex processes easier to understand and manage.
-      </p>
-    </div>
-
-    <div class="about-panel">
-      <div class="eyebrow">Our Commitment</div>
-      <h3>Service with Clarity and Purpose.</h3>
-      <p>
-        We believe customers deserve clear information, realistic
-        expectations and professional support throughout their
-        documentation journey.
-      </p>
-      <ul class="check-list">
-        <li>Clear communication and guidance</li>
-        <li>Transparent cost explanations</li>
-        <li>Responsible administrative coordination</li>
-        <li>Respect for customer privacy</li>
-        <li>Professional customer support</li>
-      </ul>
-    </div>
-  </div>
-</section>
-
-<section class="services" id="services">
-  <div class="container">
-    <div class="section-heading">
-      <div class="eyebrow">What We Do</div>
-      <h2>Our Services</h2>
-      <p>
-        We assist customers with a range of documentation and
-        administrative processes, subject to service availability,
-        applicable requirements and provider procedures.
-      </p>
-    </div>
-
-    <div class="service-grid">
-
-      <article class="service-card">
-        <div class="service-number">01 / IDENTITY</div>
-        <h3>NIN Services</h3>
+  <!-- HERO -->
+  <section class="hero" id="home">
+    <div class="container">
+      <div class="hero-content">
+        <div class="eyebrow">Independent Documentation & Administrative Support</div>
+        <h1>Making Your Next Step <span>Simpler.</span></h1>
         <p>
-          Assistance with NIN enrolment processes, information
-          on modifications, verification guidance and related
-          administrative support.
+          Documentation and administrative processes can feel complicated.
+          PrimePath helps you understand the requirements, organise your next steps
+          and navigate your documentation needs with greater clarity and confidence.
         </p>
-      </article>
-
-      <article class="service-card">
-        <div class="service-number">02 / TRAVEL</div>
-        <h3>International Passports</h3>
-        <p>
-          Guidance and administrative assistance with passport
-          application procedures, requirements, documentation
-          and application coordination.
-        </p>
-      </article>
-
-      <article class="service-card">
-        <div class="service-number">03 / BUSINESS</div>
-        <h3>CAC Registration</h3>
-        <p>
-          Assistance with business name registration, company
-          registration processes and related corporate
-          documentation procedures.
-        </p>
-      </article>
-
-      <article class="service-card">
-        <div class="service-number">04 / CIVIL RECORDS</div>
-        <h3>Birth & Civil Documentation</h3>
-        <p>
-          Guidance and assistance with birth documentation,
-          civil records and related registration processes.
-        </p>
-      </article>
-
-      <article class="service-card">
-        <div class="service-number">05 / IMMIGRATION</div>
-        <h3>Visa & Immigration Support</h3>
-        <p>
-          Administrative assistance with visa documentation,
-          application requirements and relevant immigration
-          procedures.
-        </p>
-      </article>
-
-      <article class="service-card">
-        <div class="service-number">06 / LEGAL DOCUMENTS</div>
-        <h3>Authentication & Legalisation</h3>
-        <p>
-          Assistance with document authentication, legalisation
-          and understanding the applicable submission procedures.
-        </p>
-      </article>
-
-      <article class="service-card">
-        <div class="service-number">07 / DOCUMENTATION</div>
-        <h3>Affidavits & Notarisation</h3>
-        <p>
-          Administrative guidance and coordination for affidavits,
-          notarisation and related legal documentation.
-        </p>
-      </article>
-
-      <article class="service-card">
-        <div class="service-number">08 / ADDITIONAL SUPPORT</div>
-        <h3>Related Documentation Services</h3>
-        <p>
-          Other documentation and administrative support requests
-          may be considered based on availability and applicable
-          procedures.
-        </p>
-      </article>
-
-    </div>
-
-    <div class="service-note">
-      <strong>Please note:</strong> Not every service is available
-      in every location or circumstance. Each request is assessed
-      individually, and applicable requirements are confirmed
-      before proceeding.
-    </div>
-  </div>
-</section>
-
-<section id="process">
-  <div class="container">
-    <div class="section-heading">
-      <div class="eyebrow">Simple & Organised</div>
-      <h2>How It Works</h2>
-      <p>
-        Our process is designed to keep customers informed
-        from their first enquiry through the completion of
-        the requested administrative assistance.
-      </p>
-    </div>
-
-    <div class="process-grid">
-      <div class="process-card">
-        <div class="number">01</div>
-        <h3>Make an Enquiry</h3>
-        <p>Tell us the documentation service you require and provide the relevant details.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#contact">Start an Enquiry <span>→</span></a>
+          <a class="btn btn-outline" href="#services">Explore Our Services</a>
+        </div>
+        <div class="hero-note">
+          Online support for individuals and businesses in Nigeria and internationally.
+        </div>
       </div>
+    </div>
+  </section>
 
-      <div class="process-card">
-        <div class="number">02</div>
-        <h3>Assessment & Quotation</h3>
-        <p>We review the request, confirm applicable requirements and obtain relevant cost information.</p>
+  <!-- TRUST STRIP -->
+  <div class="trust-strip">
+    <div class="container trust-grid">
+      <div class="trust-item">
+        <div class="trust-icon">◎</div>
+        <div><strong>Online Convenience</strong><span>Enquiries and support from wherever you are</span></div>
       </div>
-
-      <div class="process-card">
-        <div class="number">03</div>
-        <h3>Confirmation & Coordination</h3>
-        <p>Once you understand and approve the requirements and costs, we coordinate the agreed process.</p>
+      <div class="trust-item">
+        <div class="trust-icon">✓</div>
+        <div><strong>Clear Guidance</strong><span>Understand processes and requirements</span></div>
       </div>
-
-      <div class="process-card">
-        <div class="number">04</div>
-        <h3>Updates & Follow-up</h3>
-        <p>We communicate relevant updates and follow up on the progress of your request.</p>
+      <div class="trust-item">
+        <div class="trust-icon">◇</div>
+        <div><strong>Responsible Support</strong><span>Transparent communication at every step</span></div>
       </div>
     </div>
   </div>
-</section>
 
-<section class="values">
-  <div class="container">
-    <div class="section-heading">
-      <div class="eyebrow">What Guides Us</div>
-      <h2>Our Core Values</h2>
-      <p>
-        The principles behind every customer interaction
-        and service we coordinate.
-      </p>
-    </div>
-
-    <div class="value-grid">
-      <div class="value-card">
-        <h3>Integrity</h3>
-        <p>We communicate honestly and set realistic expectations without misleading customers.</p>
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="container about-grid">
+      <div class="about-image-wrap">
+        <img class="about-image"
+          src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=1100&q=85"
+          alt="Professionals working together at a desk">
+        <div class="image-caption">
+          <strong>A clearer path.</strong>
+          <span>Practical support for your documentation journey.</span>
+        </div>
       </div>
 
-      <div class="value-card">
-        <h3>Transparency</h3>
-        <p>We explain requirements, applicable charges and service arrangements before customers proceed.</p>
+      <div class="about-copy">
+        <div class="eyebrow">Who We Are</div>
+        <h2>Support That Helps You Move Forward.</h2>
+        <p>
+          PrimePath Documentation Services is an independent online documentation
+          and administrative support business created to make complex processes
+          easier to understand and manage.
+        </p>
+        <p>
+          We help individuals and businesses identify relevant requirements,
+          organise information, understand administrative procedures and coordinate
+          appropriate next steps.
+        </p>
+        <p>
+          Our approach is built around clarity, responsibility and honest communication.
+          We believe customers deserve to understand what a process involves before
+          deciding how to proceed.
+        </p>
+        <ul class="about-points">
+          <li><span>✓</span> Clear information and practical guidance</li>
+          <li><span>✓</span> Online assistance for local and international enquiries</li>
+          <li><span>✓</span> Transparent discussion of service scope and fees</li>
+          <li><span>✓</span> Respect for customer privacy and personal information</li>
+        </ul>
+        <a class="btn btn-dark" href="#contact">Speak With Us</a>
       </div>
-
-      <div class="value-card">
-        <h3>Professionalism</h3>
-        <p>We approach every request with responsibility, respect and attention to detail.</p>
-      </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<section id="faq">
-  <div class="container">
-    <div class="section-heading">
-      <div class="eyebrow">Need Clarification?</div>
-      <h2>Frequently Asked Questions</h2>
-      <p>Some useful information about how PrimePath operates.</p>
-    </div>
-
-    <div class="faq-list">
-
-      <details>
-        <summary>Is PrimePath a government agency?</summary>
-        <p>
-          No. PrimePath Documentation Services is an independent
-          private service provider. We are not a government agency,
-          embassy, immigration authority or official government portal.
-        </p>
-      </details>
-
-      <details>
-        <summary>How much do your services cost?</summary>
-        <p>
-          Our charges are not fixed across all services. Costs depend
-          on the specific request, applicable official fees, third-party
-          provider charges and any agreed PrimePath administrative
-          or service fee. A breakdown is provided before you decide
-          whether to proceed.
-        </p>
-      </details>
-
-      <details>
-        <summary>Can I request assistance from outside Nigeria?</summary>
-        <p>
-          Yes. We welcome enquiries from individuals and businesses
-          in Nigeria and internationally. Service availability depends
-          on the documentation process and relevant jurisdiction.
-        </p>
-      </details>
-
-      <details>
-        <summary>Does PrimePath issue passports, NIN or government certificates?</summary>
-        <p>
-          No. Official documents are issued by the relevant authorised
-          government agencies or institutions. Our role is to provide
-          administrative assistance and coordinate eligible processes.
-        </p>
-      </details>
-
-      <details>
-        <summary>Can PrimePath guarantee approval?</summary>
-        <p>
-          No. Decisions concerning approvals, registrations,
-          applications and official document issuance remain with
-          the relevant authorities. We cannot guarantee an outcome
-          or processing time controlled by a third party.
-        </p>
-      </details>
-
-      <details>
-        <summary>How do I get started?</summary>
-        <p>
-          Begin by making an enquiry about the service you need.
-          We will assess your request, explain the applicable
-          requirements and communicate the relevant costs.
-        </p>
-      </details>
-
-      <details>
-        <summary>Is my personal information protected?</summary>
-        <p>
-          We treat customer information with care and request only
-          information reasonably necessary for an agreed service.
-          Customers should never share passwords or one-time
-          verification codes with us.
-        </p>
-      </details>
-
-    </div>
-  </div>
-</section>
-
-<section class="contact" id="contact">
-  <div class="container">
-    <div class="contact-box">
-      <div>
-        <div class="eyebrow" style="color:#d4c49f">Let's Get Started</div>
-        <h2>Let Us Help You Navigate the Process.</h2>
-        <p>
-          Have a documentation request or need clarification
-          about a service? Get in touch with PrimePath.
-          We would be happy to understand your needs and
-          explain the next steps.
+  <!-- SERVICES -->
+  <section class="services-section" id="services">
+    <div class="container">
+      <div class="section-heading">
+        <div class="eyebrow">Areas of Assistance</div>
+        <h2>Documentation Support, Made Easier.</h2>
+        <p class="section-intro">
+          Explore the areas where you may request guidance or administrative assistance.
+          Every enquiry is reviewed individually to establish what support is appropriate
+          and available.
         </p>
       </div>
 
-      <a href="#enquiry" class="btn">Request Assistance</a>
+      <div class="services-grid">
+        <article class="service-card">
+          <div class="service-icon">▤</div>
+          <h3>Identity Documentation</h3>
+          <p>Guidance on relevant identity documentation processes, requirements and administrative steps, including NIN-related enquiries.</p>
+          <a href="#contact">Enquire about this area →</a>
+        </article>
+
+        <article class="service-card">
+          <div class="service-icon">✈</div>
+          <h3>Passport Documentation Guidance</h3>
+          <p>Administrative information and preparation guidance for passport-related processes and supporting documentation.</p>
+          <a href="#contact">Enquire about this area →</a>
+        </article>
+
+        <article class="service-card">
+          <div class="service-icon">⌂</div>
+          <h3>Business Registration Support</h3>
+          <p>General guidance and administrative assistance relating to business registration documentation and preparation.</p>
+          <a href="#contact">Enquire about this area →</a>
+        </article>
+
+        <article class="service-card">
+          <div class="service-icon">▧</div>
+          <h3>Civil & Personal Records</h3>
+          <p>Guidance on birth records and other relevant civil documentation, including understanding applicable requirements.</p>
+          <a href="#contact">Enquire about this area →</a>
+        </article>
+
+        <article class="service-card">
+          <div class="service-icon">◎</div>
+          <h3>Visa & Immigration Information</h3>
+          <p>Administrative preparation support and general information to help customers understand documentation requirements for relevant applications.</p>
+          <a href="#contact">Enquire about this area →</a>
+        </article>
+
+        <article class="service-card">
+          <div class="service-icon">✧</div>
+          <h3>Authentication & Legalisation Guidance</h3>
+          <p>Information and coordination support relating to document authentication, legalisation and related procedures.</p>
+          <a href="#contact">Enquire about this area →</a>
+        </article>
+
+        <article class="service-card">
+          <div class="service-icon">§</div>
+          <h3>Affidavit & Notarial Process Guidance</h3>
+          <p>Guidance on understanding the appropriate administrative steps and requirements for affidavits and notarisation.</p>
+          <a href="#contact">Enquire about this area →</a>
+        </article>
+
+        <article class="service-card">
+          <div class="service-icon">▣</div>
+          <h3>General Administrative Assistance</h3>
+          <p>Organising documentation, understanding procedures and coordinating appropriate administrative follow-up.</p>
+          <a href="#contact">Enquire about this area →</a>
+        </article>
+
+        <article class="service-card">
+          <div class="service-icon">＋</div>
+          <h3>Other Documentation Enquiries</h3>
+          <p>Have a documentation need that is not listed? Send us an enquiry so we can assess whether appropriate support is possible.</p>
+          <a href="#contact">Tell us what you need →</a>
+        </article>
+      </div>
+
+      <div class="service-disclaimer">
+        <strong>Please note:</strong> These are areas of enquiry, not a guarantee that every service is currently available.
+        Each request is subject to an individual assessment, applicable rules, provider requirements and our confirmed capacity.
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<section id="enquiry">
-  <div class="container">
-    <div class="section-heading">
-      <div class="eyebrow">Service Enquiry</div>
-      <h2>Tell Us What You Need</h2>
-      <p>
-        Provide a few details about your request.
-        No payment or sensitive identity documents are
-        required at this enquiry stage.
-      </p>
+  <!-- HOW IT WORKS -->
+  <section id="how-it-works">
+    <div class="container approach-grid">
+      <div class="approach-copy">
+        <div class="eyebrow">Our Process</div>
+        <h2>A Straightforward Way to Get Started.</h2>
+        <p>
+          We believe the first step should be understanding your needs.
+          Our process is designed to help you know what is involved before
+          making a commitment.
+        </p>
+        <br>
+        <a class="btn btn-dark" href="#contact">Make an Enquiry</a>
+      </div>
+
+      <div class="steps">
+        <div class="step">
+          <div class="step-number">01</div>
+          <div>
+            <h3>Tell Us What You Need</h3>
+            <p>Send an enquiry explaining the documentation or administrative assistance you are looking for.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-number">02</div>
+          <div>
+            <h3>We Review Your Request</h3>
+            <p>We assess the nature of your enquiry and identify the relevant requirements and possible next steps.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-number">03</div>
+          <div>
+            <h3>You Receive Clear Information</h3>
+            <p>Where assistance is possible, the scope, applicable charges and any relevant limitations are explained before you proceed.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-number">04</div>
+          <div>
+            <h3>Proceed With an Agreed Plan</h3>
+            <p>If you choose to continue, the agreed administrative support and follow-up arrangements are confirmed with you.</p>
+          </div>
+        </div>
+      </div>
     </div>
+  </section>
 
-    <form id="enquiryForm" style="max-width:650px">
-      <label for="customerName">Full name</label>
-      <input id="customerName" required placeholder="Your full name">
+  <!-- FOUNDERS -->
+  <section class="founders-section" id="founders">
+    <div class="container">
+      <div class="section-heading">
+        <div class="eyebrow">The People Behind PrimePath</div>
+        <h2>Built on Partnership and Purpose.</h2>
+        <p class="section-intro">
+          PrimePath is a partnership founded on a shared interest in making
+          documentation and administrative processes easier to navigate.
+        </p>
+      </div>
 
-      <label for="customerEmail">Email address</label>
-      <input id="customerEmail" type="email" required placeholder="Your email address">
+      <div class="founders-grid">
+        <article class="founder-card">
+          <div class="founder-initial">S</div>
+          <div>
+            <h3>Sonia</h3>
+            <span class="founder-role">Co-Founder · Strategy & Operations</span>
+            <p>
+              Leads business strategy, research, service knowledge, partnership
+              development and overall operational direction.
+            </p>
+          </div>
+        </article>
 
-      <label for="customerLocation">Country of residence</label>
-      <input id="customerLocation" required placeholder="Your country">
+        <article class="founder-card">
+          <div class="founder-initial">J</div>
+          <div>
+            <h3>Jenival</h3>
+            <span class="founder-role">Co-Founder · Coordination & Visibility</span>
+            <p>
+              Supports local customer acquisition, business visibility,
+              customer coordination and operational collaboration.
+            </p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
 
-      <label for="serviceType">Service required</label>
-      <select id="serviceType" required>
-        <option value="">Select a service</option>
-        <option>NIN Services</option>
-        <option>International Passports</option>
-        <option>CAC Registration</option>
-        <option>Birth & Civil Documentation</option>
-        <option>Visa & Immigration Support</option>
-        <option>Authentication & Legalisation</option>
-        <option>Affidavits & Notarisation</option>
-        <option>Other Documentation Services</option>
-      </select>
+  <!-- STANDARDS -->
+  <section>
+    <div class="container">
+      <div class="section-heading">
+        <div class="eyebrow">What Guides Us</div>
+        <h2>Our Commitment to Responsible Service.</h2>
+        <p class="section-intro">
+          Trust is built through clear expectations, responsible handling of enquiries
+          and honest communication.
+        </p>
+      </div>
 
-      <label for="customerMessage">Tell us briefly about your request</label>
-      <textarea id="customerMessage" rows="5" required placeholder="Describe the assistance you need"></textarea>
+      <div class="standards-grid">
+        <div class="standard">
+          <strong>Clarity</strong>
+          <p>We aim to explain processes, requirements and limitations in understandable language.</p>
+        </div>
+        <div class="standard">
+          <strong>Transparency</strong>
+          <p>Service scope and applicable charges should be discussed before a customer commits.</p>
+        </div>
+        <div class="standard">
+          <strong>Confidentiality</strong>
+          <p>Customer information should be handled carefully and only for appropriate purposes.</p>
+        </div>
+        <div class="standard">
+          <strong>Integrity</strong>
+          <p>We do not promise approvals, official outcomes or timelines outside our control.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-      <button type="submit" class="btn btn-primary" style="border:0;cursor:pointer;margin-top:20px">
-        Prepare My Enquiry
-      </button>
+  <!-- FAQ -->
+  <section class="faq-section" id="faq">
+    <div class="container">
+      <div class="section-heading">
+        <div class="eyebrow">Frequently Asked Questions</div>
+        <h2>Questions You May Have.</h2>
+        <p class="section-intro">A few important things to understand before sending an enquiry.</p>
+      </div>
 
-      <p id="formResult" style="margin-top:15px;color:var(--green);font-size:13px"></p>
-    </form>
-  </div>
-</section>
+      <div class="faq-list">
+        <div class="faq-item">
+          <button class="faq-question"><span>Is PrimePath a government agency?</span><span>＋</span></button>
+          <div class="faq-answer">
+            No. PrimePath Documentation Services is an independent private service provider.
+            We are not a government agency, embassy, official portal or issuing authority.
+          </div>
+        </div>
 
-<div class="disclaimer">
-  <div class="container">
-    <p>
-      <strong>Important Disclaimer:</strong> PrimePath Documentation
-      Services is an independent private documentation and
-      administrative support provider. We are not affiliated with
-      or endorsed by any government agency, embassy or public
-      institution. Official decisions, approvals, fees and document
-      issuance are determined by the relevant authorities.
-      All services are subject to applicable laws, provider
-      requirements and availability.
-    </p>
-  </div>
-</div>
+        <div class="faq-item">
+          <button class="faq-question"><span>Can I make an enquiry from outside Nigeria?</span><span>＋</span></button>
+          <div class="faq-answer">
+            Yes. We welcome enquiries from Nigeria and internationally. The type of assistance
+            available will depend on the country, documentation involved and applicable requirements.
+          </div>
+        </div>
 
+        <div class="faq-item">
+          <button class="faq-question"><span>Do you guarantee approval or document issuance?</span><span>＋</span></button>
+          <div class="faq-answer">
+            No. Decisions, approvals, processing times and official document issuance are controlled
+            by the relevant government agencies, institutions or authorised providers. We cannot guarantee their outcomes.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question"><span>How much do your services cost?</span><span>＋</span></button>
+          <div class="faq-answer">
+            Fees depend on the nature and scope of each request. Where assistance is possible,
+            applicable official or third-party charges and any separate PrimePath service fee
+            should be explained before you decide to proceed.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question"><span>Do I have to pay immediately after making an enquiry?</span><span>＋</span></button>
+          <div class="faq-answer">
+            No. An enquiry allows us to understand your request. Any payment arrangement should
+            only be discussed after the service scope, charges and next steps have been explained.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question"><span>Can I send my identity documents through this website?</span><span>＋</span></button>
+          <div class="faq-answer">
+            No. This website's enquiry form is not designed to collect identity documents or other
+            sensitive records. Do not submit passwords, one-time passwords, banking details or
+            identity-document images through this form.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question"><span>How do I begin?</span><span>＋</span></button>
+          <div class="faq-answer">
+            Use the enquiry form on this page to describe what you need. Your request can then
+            be reviewed to determine whether appropriate assistance is available.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact-section" id="contact">
+    <div class="container contact-grid">
+      <div class="contact-copy">
+        <div class="eyebrow">Let's Get Started</div>
+        <h2>Tell Us What You Need Help With.</h2>
+        <p>
+          Every request begins with a conversation. Share a brief description
+          of your documentation or administrative needs, and we can assess the
+          appropriate next step.
+        </p>
+        <p>
+          Please provide only the basic information needed to understand your enquiry.
+          Do not include sensitive identity, banking or account information.
+        </p>
+        <div class="contact-note">
+          <strong>Important:</strong> This form prepares an enquiry message for you to copy.
+          It does not automatically send a message to PrimePath or store your information.
+        </div>
+      </div>
+
+      <form class="contact-form" id="enquiryForm">
+        <div class="form-row">
+          <div class="field">
+            <label for="customerName">Full Name</label>
+            <input type="text" id="customerName" placeholder="Your name" required>
+          </div>
+          <div class="field">
+            <label for="customerEmail">Email Address</label>
+            <input type="email" id="customerEmail" placeholder="you@example.com" required>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="field">
+            <label for="customerCountry">Country</label>
+            <input type="text" id="customerCountry" placeholder="Your country" required>
+          </div>
+          <div class="field">
+            <label for="serviceType">Area of Assistance</label>
+            <select id="serviceType" required>
+              <option value="">Select an area</option>
+              <option>Identity documentation</option>
+              <option>Passport documentation guidance</option>
+              <option>Business registration support</option>
+              <option>Civil and personal records</option>
+              <option>Visa and immigration information</option>
+              <option>Authentication and legalisation</option>
+              <option>Affidavit and notarial guidance</option>
+              <option>General administrative assistance</option>
+              <option>Other documentation enquiry</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="customerMessage">Briefly Describe What You Need</label>
+          <textarea id="customerMessage" placeholder="Tell us about the assistance you are looking for..." required></textarea>
+        </div>
+
+        <p class="form-small">
+          By preparing this enquiry, you acknowledge that the information you provide
+          will be included in a message that you choose to copy and share.
+        </p>
+
+        <button type="submit" class="btn btn-dark">Prepare My Enquiry →</button>
+        <p class="form-status" id="formStatus" aria-live="polite"></p>
+      </form>
+    </div>
+  </section>
+
+  <!-- POLICIES -->
+  <section class="policy-section" id="policies">
+    <div class="container">
+      <div class="section-heading">
+        <div class="eyebrow">Customer Information</div>
+        <h2>Our Policies & Service Terms.</h2>
+        <p class="section-intro">
+          Please review these important service conditions before proceeding with an enquiry.
+        </p>
+      </div>
+
+      <div class="policy-grid">
+        <article class="policy-card" id="privacy">
+          <h3>Privacy Policy</h3>
+          <p>
+            PrimePath respects the privacy of people who contact us. Information shared
+            in an enquiry should only be used for the purpose of understanding and responding
+            to that request and any further service the customer chooses to pursue.
+          </p>
+          <p>
+            This website's enquiry form prepares a message for the visitor to copy.
+            It does not transmit the information to PrimePath or save it in a website database.
+          </p>
+          <p>
+            Do not submit passwords, one-time passwords, banking credentials or copies
+            of sensitive identity documents through this website. If further documentation
+            is required for an agreed service, an appropriate method of communication
+            and handling should be discussed first.
+          </p>
+        </article>
+
+        <article class="policy-card" id="terms">
+          <h3>Terms of Service</h3>
+          <p>
+            PrimePath Documentation Services operates as an independent documentation
+            and administrative support provider. We are not a government agency,
+            embassy, court, issuing authority or official representative of any institution.
+          </p>
+          <p>
+            Our assistance may include general information, administrative preparation,
+            coordination and follow-up, depending on the request and our confirmed capacity.
+          </p>
+          <p>
+            Official decisions, approvals, fees, processing times and document issuance
+            remain the responsibility of the relevant authorities or service providers.
+            No approval or particular outcome is guaranteed.
+          </p>
+          <p>
+            Customers should provide accurate information and review all requirements
+            communicated to them. The scope, fees and limitations of any agreed service
+            should be confirmed before work begins.
+          </p>
+        </article>
+
+        <article class="policy-card" id="refund">
+          <h3>Refund & Cancellation Policy</h3>
+          <p>
+            Any applicable PrimePath service fee, official charge or third-party cost
+            should be identified and explained before a customer confirms a service.
+          </p>
+          <p>
+            If a customer wishes to cancel, the request should be raised as soon as possible.
+            Any refund assessment will take account of work already completed, costs already
+            incurred and any non-refundable official or third-party charges.
+          </p>
+          <p>
+            Where a service has not started, the applicable refund position should be
+            discussed with the customer. No refund policy can override the terms of an
+            external authority or provider.
+          </p>
+          <p>
+            Customers should request and retain confirmation of any agreed payment,
+            cancellation or refund arrangement.
+          </p>
+        </article>
+
+        <article class="policy-card" id="delivery">
+          <h3>Service Delivery Policy</h3>
+          <p>
+            PrimePath is an online service. Communication, administrative support and
+            agreed updates are handled remotely through the communication method
+            confirmed with the customer.
+          </p>
+          <p>
+            The expected delivery or completion timeline, where one can reasonably
+            be provided, will depend on the nature of the service and any relevant
+            external authority or provider.
+          </p>
+          <p>
+            PrimePath cannot control delays caused by government agencies, institutions,
+            courier services, technical systems or other third parties.
+          </p>
+          <p>
+            Where physical documents or courier arrangements are involved, the applicable
+            arrangements, costs and responsibilities should be agreed before proceeding.
+          </p>
+        </article>
+      </div>
+    </div>
+  </section>
 </main>
 
+<!-- FOOTER -->
 <footer>
   <div class="container">
     <div class="footer-grid">
-      <div>
-        <h3>PrimePath Documentation Services</h3>
+      <div class="footer-brand">
+        <a class="brand" href="#home">
+          <svg class="brand-mark" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-label="PrimePath logo">
+            <rect x="3" y="3" width="94" height="94" rx="8" fill="#ffffff"/>
+            <path d="M25 76V25H48C62 25 70 33 70 45C70 57 62 64 48 64H39" fill="none" stroke="#b69a64" stroke-width="6"/>
+            <path d="M55 76L76 55" fill="none" stroke="#172923" stroke-width="5"/>
+            <path d="M62 76H76V62" fill="none" stroke="#172923" stroke-width="5"/>
+          </svg>
+          <span>
+            <span class="brand-name">PrimePath</span>
+            <span class="brand-sub">DOCUMENTATION SERVICES</span>
+          </span>
+        </a>
         <p>
-          Independent documentation and administrative support
-          for individuals and businesses in Nigeria and internationally.
+          Independent online documentation and administrative support,
+          helping individuals and businesses navigate their next steps with clarity.
         </p>
       </div>
 
-      <div>
-        <h3>Explore</h3>
-        <a href="#about">About Us</a>
-        <a href="#services">Our Services</a>
-        <a href="#process">How It Works</a>
-        <a href="#faq">FAQs</a>
+      <div class="footer-column">
+        <h4>Explore</h4>
+        <a href="#about">About PrimePath</a>
+        <a href="#services">Areas of Assistance</a>
+        <a href="#how-it-works">How It Works</a>
+        <a href="#founders">Our Founders</a>
+        <a href="#contact">Make an Enquiry</a>
       </div>
 
-      <div>
-        <h3>Information</h3>
+      <div class="footer-column">
+        <h4>Policies</h4>
         <a href="#privacy">Privacy Policy</a>
-        <a href="#terms">Terms & Conditions</a>
-        <a href="#refund">Refund Policy</a>
-        <a href="#contact">Contact Us</a>
+        <a href="#terms">Terms of Service</a>
+        <a href="#refund">Refund & Cancellation</a>
+        <a href="#delivery">Service Delivery Policy</a>
+        <a href="#faq">Frequently Asked Questions</a>
       </div>
     </div>
 
     <div class="footer-bottom">
       <span>© <span id="year"></span> PrimePath Documentation Services. All rights reserved.</span>
-      <span>Professionalism. Transparency. Integrity.</span>
+      <span>Clarity. Support. Progress.</span>
     </div>
+
+    <p class="disclaimer">
+      PrimePath Documentation Services is an independent private service provider and
+      is not affiliated with or endorsed by any government agency, embassy, court or
+      official issuing authority. All official decisions and document issuance remain
+      with the relevant authorities.
+    </p>
   </div>
 </footer>
 
 <script>
-function toggleMenu() {
-  document.getElementById('navLinks').classList.toggle('active');
-}
+  // Mobile navigation
+  const menuToggle = document.getElementById("menuToggle");
+  const navLinks = document.getElementById("navLinks");
 
-document.querySelectorAll('.nav-links a').forEach(link => {
-  link.addEventListener('click', () => {
-    document.getElementById('navLinks').classList.remove('active');
+  menuToggle.addEventListener("click", function () {
+    const isOpen = navLinks.classList.toggle("open");
+    menuToggle.setAttribute("aria-expanded", isOpen);
+    menuToggle.textContent = isOpen ? "×" : "☰";
   });
-});
 
-document.getElementById('year').textContent = new Date().getFullYear();
+  document.querySelectorAll(".nav-links a").forEach(function (link) {
+    link.addEventListener("click", function () {
+      navLinks.classList.remove("open");
+      menuToggle.setAttribute("aria-expanded", "false");
+      menuToggle.textContent = "☰";
+    });
+  });
 
-document.getElementById('enquiryForm').addEventListener('submit', async function(e) {
-  e.preventDefault();
+  // FAQ accordion
+  document.querySelectorAll(".faq-question").forEach(function (button) {
+    button.addEventListener("click", function () {
+      const item = button.parentElement;
+      item.classList.toggle("active");
+    });
+  });
 
-  const message =
-`PRIMEPATH DOCUMENTATION SERVICES - NEW ENQUIRY
+  // Enquiry form: prepares text for the visitor to copy.
+  // It does not send or store customer information.
+  document.getElementById("enquiryForm").addEventListener("submit", async function (event) {
+    event.preventDefault();
 
-Name: ${document.getElementById('customerName').value}
-Email: ${document.getElementById('customerEmail').value}
-Country: ${document.getElementById('customerLocation').value}
-Service: ${document.getElementById('serviceType').value}
+    const name = document.getElementById("customerName").value.trim();
+    const email = document.getElementById("customerEmail").value.trim();
+    const country = document.getElementById("customerCountry").value.trim();
+    const service = document.getElementById("serviceType").value;
+    const message = document.getElementById("customerMessage").value.trim();
 
-Request:
-${document.getElementById('customerMessage').value}`;
+    const enquiry =
+      "PRIMEPATH DOCUMENTATION SERVICES - CUSTOMER ENQUIRY\n\n" +
+      "Name: " + name + "\n" +
+      "Email: " + email + "\n" +
+      "Country: " + country + "\n" +
+      "Area of assistance: " + service + "\n\n" +
+      "Enquiry details:\n" + message;
 
-  try {
-    await navigator.clipboard.writeText(message);
-    document.getElementById('formResult').textContent =
-      'Your enquiry has been prepared and copied. Please paste it into your message to PrimePath.';
-  } catch (error) {
-    document.getElementById('formResult').textContent =
-      'Your enquiry details are ready. Please copy the information and send it to PrimePath through its official contact channel.';
-  }
-});
+    const status = document.getElementById("formStatus");
+
+    try {
+      if (navigator.clipboard && window.isSecureContext) {
+        await navigator.clipboard.writeText(enquiry);
+      } else {
+        const temporary = document.createElement("textarea");
+        temporary.value = enquiry;
+        temporary.style.position = "fixed";
+        temporary.style.opacity = "0";
+        document.body.appendChild(temporary);
+        temporary.select();
+        const copied = document.execCommand("copy");
+        temporary.remove();
+        if (!copied) throw new Error("Copy was unsuccessful");
+      }
+
+      status.textContent = "Your enquiry has been copied. You can now paste it into a message to PrimePath once official contact details are provided.";
+    } catch (error) {
+      status.textContent = "We could not copy automatically. Please try again or copy your details manually.";
+    }
+  });
+
+  // Current year
+  document.getElementById("year").textContent = new Date().getFullYear();
 </script>
 
 </body>
